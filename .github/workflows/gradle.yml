@@ -55,7 +55,7 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
-      # CodeDeploy를 실행합니다.
+      # CodeDeploy에게 배포 명령을 내린다.
       - name: Code Deploy
         run: >
           aws deploy create-deployment --application-name be-pair-40
