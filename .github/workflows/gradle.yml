@@ -54,3 +54,11 @@ jobs:
       # gradlew에 권한을 줍니다.
       - name: Make gradlew executable
         run: chmod +x ./gradlew
+
+      # CodeDeploy를 실행합니다.
+      - name: Code Deploy
+        run: >
+          aws deploy create-deployment --application-name be-pair-40
+          --deployment-config-name CodeDeployDefault.AllAtOnce
+          --deployment-group-name be-pair-40-group
+          --s3-location bucket=$S3_BUCKET_NAME,bundleType=zip,key=practice-deploy.zip
