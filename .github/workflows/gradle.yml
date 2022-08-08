@@ -53,4 +53,4 @@ jobs:
 
       # gradlew에 권한을 줍니다.
       - name: Make gradlew executable
-          run: chmod +x ./gradlew
+        run: chmod +x ./gradlew
